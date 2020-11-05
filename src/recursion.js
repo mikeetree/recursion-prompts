@@ -20,7 +20,7 @@ var sum = function(array) {
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
     // return array.length > 0 ? Array.isArray(array[0]) ? arraySum(array[0]) + arraySum(array.slice(1)) : array[0] + arraySum(array.slice(1)) : 0;
-    
+
     if (array.length > 0) {
         if (Array.isArray(array[0])) {
             return arraySum(array[0]) + arraySum(array.slice(1));
@@ -34,6 +34,7 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+    return n !== 0 ? !isEven(n - (n > 0 ? 1 : -1)) : true;
 };
 
 // 5. Sum all integers below a given integer.
